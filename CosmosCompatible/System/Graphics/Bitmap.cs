@@ -1,0 +1,1 @@
+﻿//Use BEOS's bitmap
