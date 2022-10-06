@@ -44,7 +44,7 @@ namespace BEOS.GUI
             this.Visible = true;
             WindowManager.Windows.Add(this);
 #if Bahasa
-            Title = "窗体1";
+            Title = "Jendela1";
 #else
             Title = "Window1";
 #endif

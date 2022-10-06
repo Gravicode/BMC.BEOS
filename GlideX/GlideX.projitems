@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>e7558261-d509-4915-8a57-121bef4ff778</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>GlideX</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Bitmap.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Colors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Display\CalibrationWindow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Display\DisplayObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Display\DisplayObjectContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Display\Graphics.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Display\Window.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Enums.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Events\Events.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\ExtensionHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Ext\Bitmaps.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Ext\Colors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\FontManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Geom\Point.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Geom\Rectangle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Geom\Size.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Glide.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\GlideLoader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\GlideTouch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\GlideUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Media\Color.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\MessageBoxManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\RadioButtonManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\ResourceHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\Tween.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Button.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Canvas.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\CheckBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\DataGrid\DataGrid.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\DataGrid\DataGridColumn.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\DataGrid\DataGridItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\DataGrid\DataGridItemComparer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Dropdown.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Image.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Input\BaseEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Input\CaptureMode.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Input\GenericEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Input\HardwareButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Input\TouchEvent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Input\TouchEventHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Input\TouchGesture.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Input\TouchGestureEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Input\TouchGestureEventHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Input\TouchInput.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Input\TouchMessages.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Keyboard\Keyboard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Keyboard\KeyboardText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\List\IListItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\List\List.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\List\ListItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Modal\MessageBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Modal\Modal.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\ProgressBar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\RadioButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Slider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\TextBlock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Text\InputBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Text\PasswordBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Glide\UI\Text\TextBox.cs" />
+  </ItemGroup>
+</Project>

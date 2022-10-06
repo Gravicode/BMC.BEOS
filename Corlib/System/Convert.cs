@@ -123,5 +123,10 @@ namespace System
         {
             return (byte)ToInt64(str);
         }
+        
+        public static double ToDouble(string str)
+        {
+            return (double)ToInt64(str);
+        }
     }
 }

@@ -5,7 +5,7 @@ using System.Drawing;
 
 namespace BEOS.Misc
 {
-    internal class IFont
+    public class IFont
     {
         private readonly Image image;
         private readonly string charset;
@@ -13,6 +13,14 @@ namespace BEOS.Misc
         public int FontSize;
 
         public int NumRow => image.Width / FontSize;
+
+        public int Height
+        {
+            get
+            {
+                return FontSize;
+            }
+        }
 
         public IFont(Image _img, string _charset,int size)
         {

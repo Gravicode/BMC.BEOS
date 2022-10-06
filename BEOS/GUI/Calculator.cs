@@ -3,6 +3,7 @@ using BEOS;
 using BEOS.Graph;
 using BEOS.GUI;
 using BEOS.GUI.Widgets;
+using BEOS.Misc;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -26,7 +27,6 @@ namespace BEOS.GUI
             image = new Image(this.Width, this.Height);
             fixed (int* p = image.RawData)
             g = new Graphics(image.Width, image.Height, (uint*)p);
-
             PressedButton = new();
 
             g.FillRectangle(0, 0, Width, Height, 0xFF222222);
@@ -119,7 +119,7 @@ namespace BEOS.GUI
             }
         }
 
-        enum Opreation
+        enum Operations
         {
             None,
             Plus,
@@ -131,7 +131,7 @@ namespace BEOS.GUI
 
         ulong ValueToDisplay = 0;
 
-        Opreation opreation = Opreation.None;
+        Operations opreation = Operations.None;
 
         private unsafe void ProcessButton(Button btn)
         {
@@ -153,7 +153,7 @@ namespace BEOS.GUI
             {
                 if (Num1 == 0) Num1 = Num2;
 
-                opreation = Opreation.Plus;
+                opreation = Operations.Plus;
 
                 Num2 = 0;
             }
@@ -161,7 +161,7 @@ namespace BEOS.GUI
             {
                 if (Num1 == 0) Num1 = Num2;
 
-                opreation = Opreation.Minus;
+                opreation = Operations.Minus;
 
                 Num2 = 0;
             }
@@ -173,11 +173,11 @@ namespace BEOS.GUI
             }
             else if (btn.Name == "=")
             {
-                if (opreation == Opreation.Plus)
+                if (opreation == Operations.Plus)
                 {
                     Num1 += Num2;
                 }
-                else if (opreation == Opreation.Minus)
+                else if (opreation == Operations.Minus)
                 {
                     if (Num1 >= Num2)
                         Num1 -= Num2;
@@ -187,7 +187,7 @@ namespace BEOS.GUI
                         Num2 = 0;
                     }
                 }
-                else if (opreation == Opreation.None)
+                else if (opreation == Operations.None)
                 {
                     Num2 = 0;
                 }

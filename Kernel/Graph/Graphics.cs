@@ -74,6 +74,104 @@ namespace BEOS.Graph
                 }
             }
         }
+        public virtual void DrawEllipse(double radiusX, double radiusY,
+                        double X, double Y,uint color)
+        {
+
+            double dx, dy, d1, d2, x, y;
+            x = 0;
+            y = radiusY;
+
+            // Initial decision parameter of region 1
+            d1 = (radiusY * radiusY) - (radiusX * radiusX * radiusY) +
+                            (0.25f * radiusX * radiusX);
+            dx = 2 * radiusY * radiusY * x;
+            dy = 2 * radiusX * radiusX * y;
+
+            // For region 1
+            while (dx < dy)
+            {
+                /*
+                // Print points based on 4-way symmetry
+                Console.WriteLine(String.Format("{0:0.000000}",
+                                    (x + X)) + ", " + String.Format
+                                    ("{0:0.000000}", (y + Y)));
+                Console.WriteLine(String.Format("{0:0.000000}",
+                                    (-x + X)) + ", " + String.Format
+                                    ("{0:0.000000}", (y + Y)));
+                Console.WriteLine(String.Format("{0:0.000000}",
+                                    (x + X)) + ", " + String.Format
+                                    ("{0:0.000000}", (-y + Y)));
+                Console.WriteLine(String.Format("{0:0.000000}",
+                                    (-x + X)) + ", " + String.Format
+                                    ("{0:0.000000}", (-y + Y)));*/
+
+                DrawPoint((int)(x + X), (int)(y + Y), color);
+                DrawPoint((int)(-x + X), (int)(y + Y), color);
+                DrawPoint((int)(x + X), (int)(-y + Y), color);
+                DrawPoint((int)(-x + X), (int)(-y + Y), color);
+                // Checking and updating value of
+                // decision parameter based on algorithm
+                if (d1 < 0)
+                {
+                    x++;
+                    dx = dx + (2 * radiusY * radiusY);
+                    d1 = d1 + dx + (radiusY * radiusY);
+                }
+                else
+                {
+                    x++;
+                    y--;
+                    dx = dx + (2 * radiusY * radiusY);
+                    dy = dy - (2 * radiusX * radiusX);
+                    d1 = d1 + dx - dy + (radiusY * radiusY);
+                }
+            }
+
+            // Decision parameter of region 2
+            d2 = ((radiusY * radiusY) * ((x + 0.5f) * (x + 0.5f)))
+                + ((radiusX * radiusX) * ((y - 1) * (y - 1)))
+                - (radiusX * radiusX * radiusY * radiusY);
+
+            // Plotting points of region 2
+            while (y >= 0)
+            {
+                /*
+                // printing points based on 4-way symmetry
+                Console.WriteLine(String.Format("{0:0.000000}",
+                                    (x + X)) + ", " + String.Format
+                                    ("{0:0.000000}", (y + Y)));
+                Console.WriteLine(String.Format("{0:0.000000}",
+                                    (-x + X)) + ", " + String.Format
+                                    ("{0:0.000000}", (y + Y)));
+                Console.WriteLine(String.Format("{0:0.000000}",
+                                    (x + X)) + ", " + String.Format
+                                    ("{0:0.000000}", (-y + Y)));
+                Console.WriteLine(String.Format("{0:0.000000}",
+                                    (-x + X)) + ", " + String.Format
+                                    ("{0:0.000000}", (-y + Y)));*/
+                DrawPoint((int)(x + X), (int)(y + Y), color);
+                DrawPoint((int)(-x + X), (int)(y + Y), color);
+                DrawPoint((int)(x + X), (int)(-y + Y), color);
+                DrawPoint((int)(-x + X), (int)(-y + Y), color);
+                // Checking and updating parameter
+                // value based on algorithm
+                if (d2 > 0)
+                {
+                    y--;
+                    dy = dy - (2 * radiusX * radiusX);
+                    d2 = d2 + (radiusX * radiusX) - dy;
+                }
+                else
+                {
+                    y--;
+                    x++;
+                    dx = dx + (2 * radiusY * radiusY);
+                    dy = dy - (2 * radiusX * radiusX);
+                    d2 = d2 + dx - dy + (radiusX * radiusX);
+                }
+            }
+        }
 
         public virtual uint GetPoint(int X, int Y)
         {

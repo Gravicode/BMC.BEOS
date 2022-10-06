@@ -5,6 +5,10 @@ namespace BEOS.Misc
 {
     public unsafe class Bitmap : Image
     {
+        public Bitmap(int Width,int Height):base(Width,Height)
+        {
+
+        }
         public Bitmap(byte[] data)
         {
             fixed (byte* p = data)
